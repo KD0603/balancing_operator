@@ -13,14 +13,14 @@ Balancing is mainly divided into two parts. The first part is the **settlement o
 
 
 Expected Input:
-- "market_records": matched and unmatched electricity of each household (shows in data.py)
-- "actual records": real buy/sell electricity of each household (shows in data.py)
-- "PRICE_TABLE" : Main grid price (FiT(sell) and ToU(buy)) like: {"00:00": {"buy": 18.701638, "sell": 8.031167},
-                                                                  "01:00": {"buy": 18.295287, "sell": 7.874833},
-                                                                  ...}
+- **"market_records":** matched and unmatched electricity of each household (shows in data.py)
+- **"actual records":** real buy/sell electricity of each household (shows in data.py)
+- **"PRICE_TABLE" :** Main grid price (FiT(sell) and ToU(buy)) like: {"00:00": {"buy": 18.701638, "sell": 8.031167},
+                                                                      "01:00": {"buy": 18.295287, "sell": 7.874833},
+                                                                      ...}
 
 Expected Output:
-- Unmatched settlement: includes {
+- **Unmatched settlement:** includes {
                 "household_id";
                 "timeslot";
                 "unmatched_buy_kwh": Unmatched buying volume;
@@ -30,7 +30,7 @@ Expected Output:
                 "final_settlement_unit_price": Unit price including penalty;
                 "unmatched_net_amount": Final net payment amount
             }
-- Deviation settlement: includes {
+- **Deviation settlement:** includes {
                 "household_id";
                 "timeslot";
                 "deviation_order_kwh": Absolute deviation;
@@ -44,4 +44,10 @@ Expected Output:
                 "final_settlement_unit_price": Unit price including penalty;
                 "deviation_net_amount": Final net payment amount
             }
-
+  
+Each household's final settlement for a given timeslot consists of three components:
+Final net amount (per household, per timeslot) =
+    matched_net_amount        ← from Market Operator (CDA result)
+  + unmatched_net_amount      ← from Balancing Operator Part 1
+  + deviation_net_amount      ← from Balancing Operator Part 2
+In the balancing section, buying (paying) is negative and selling (receiving) is positive
