@@ -21,27 +21,27 @@ Expected Input:
 
 Expected Output:
 - Unmatched settlement: includes {
-                "household_id"
-                "timeslot"
-                "unmatched_buy_kwh": Unmatched buying volume
-                "unmatched_sell_kwh": Unmatched selling volume
-                "grid_trade_direction"
-                "penalty_amount": Penalty cost
-                "final_settlement_unit_price": Unit price including penalty
+                "household_id";
+                "timeslot";
+                "unmatched_buy_kwh": Unmatched buying volume;
+                "unmatched_sell_kwh": Unmatched selling volume;
+                "grid_trade_direction";
+                "penalty_amount": Penalty cost;
+                "final_settlement_unit_price": Unit price including penalty;
                 "unmatched_net_amount": Final net payment amount
             }
 - Deviation settlement: includes {
-                "household_id"
-                "timeslot"
-                "deviation_order_kwh": Absolute deviation
-                "deviation_type"
-                "internal_trade_direction"
-                "internal_matched_kwh": Internal matching trading volume
-                "counterparty_list": Counterparty details
-                "final_grid_trade_direction"
-                "final_grid_kwh"：Volume of trades with the grid
-                "penalty_amount": Penalty cost
-                "final_settlement_unit_price": Unit price including penalty
+                "household_id";
+                "timeslot";
+                "deviation_order_kwh": Absolute deviation;
+                "deviation_type";
+                "internal_trade_direction";
+                "internal_matched_kwh": Internal matching trading volume;
+                "counterparty_list": Counterparty details;
+                "final_grid_trade_direction";
+                "final_grid_kwh"：Volume of trades with the grid;
+                "penalty_amount": Penalty cost;
+                "final_settlement_unit_price": Unit price including penalty;
                 "deviation_net_amount": Final net payment amount
             }
 
