@@ -44,10 +44,10 @@ Expected Output:
                 "final_settlement_unit_price": Unit price including penalty;
                 "deviation_net_amount": Final net payment amount
             }
-  
+
+
 Each household's final settlement for a given timeslot consists of three components:
-Final net amount (per household, per timeslot) =
-    matched_net_amount        ← from Market Operator (CDA result)
-  + unmatched_net_amount      ← from Balancing Operator Part 1
-  + deviation_net_amount      ← from Balancing Operator Part 2
+
+**Final net amount** (per household, per timeslot) **= matched_net_amount**(from Market Operator) **+ unmatched_net_amount**(from Balancing Operator Part 1) **+ deviation_net_amount**(from Balancing Operator Part 2)
+
 In the balancing section, buying (paying) is negative and selling (receiving) is positive
