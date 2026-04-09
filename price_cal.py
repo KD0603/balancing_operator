@@ -25,7 +25,7 @@ def build_price_table(
     fit_df["timestamp"] = pd.to_datetime(fit_df["timestamp"], utc=True)
 
     start = pd.Timestamp(start_str, tz="UTC")
-    end   = pd.Timestamp(end_str,   tz="UTC")
+    end = pd.Timestamp(end_str,   tz="UTC")
 
     tou_df = tou_df[(tou_df["timestamp"] >= start) & (tou_df["timestamp"] < end)].copy()
     fit_df = fit_df[(fit_df["timestamp"] >= start) & (fit_df["timestamp"] < end)].copy()
