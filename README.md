@@ -7,7 +7,7 @@ Balancing is mainly divided into two parts. The first part is the **settlement o
 - **utils.py:** Shared math helpers, constants, and deviation classifier
 - **part1_unmatched.py:** Settles unmatched orders against the main grid with penalty
 - **part2_deviation.py:** Matches deviations internally and settles remainder with grid
-- **Price_Cal.py:** The hourly average from 2026-1-1 to 2026-3-1 found on Octopus
+- **price_cal.py:** The hourly price from 2020-01-01 to 2021-01-01 found on Octopus
 - csv_agile_L_South_Western_England.csv (ToU)
 - csv_agileoutgoing_L_South_Western_England.csv (FiT)
 
@@ -15,8 +15,8 @@ Balancing is mainly divided into two parts. The first part is the **settlement o
 Expected Input:
 - **"market_records":** matched and unmatched electricity of each household (shows in data.py)
 - **"actual records":** real buy/sell electricity of each household (shows in data.py)
-- **"PRICE_TABLE" :** Main grid price (FiT(sell) and ToU(buy)) like: {"00:00": {"buy": 18.701638, "sell": 8.031167},
-                                                                      "01:00": {"buy": 18.295287, "sell": 7.874833},
+- **"PRICE_TABLE" :** Main grid price (FiT(sell) and ToU(buy)) like: {"2020-01-01 00:00": {"buy": 18.701638, "sell": 8.031167},
+                                                                      "2020-01-01 01:00": {"buy": 18.295287, "sell": 7.874833},
                                                                       ...}
 
 Expected Output:
@@ -58,4 +58,5 @@ In the balancing section, buying (paying) is negative and selling (receiving) is
 3. Part 2 internal matching price mechanism changed: Dual spread pricing → Single midpoint price
 4. Remaining allocation: Change from fixed alphabetical order to rotation priority
 5. More complete verification: Added buy/sell mutual exclusion verification
+6. price_cal.py: changed from hour-of-day averaged pricing to full UTC datetime-based hourly pricing, with configurable date range, data validation, and unit conversion from MWh-based prices to kWh-based settlement prices.
 
