@@ -55,7 +55,7 @@ In the balancing section, buying (paying) is negative and selling (receiving) is
 **Key Changes**
 1. Convert a single file to multiple modules
 2. Field refactor：committed_* → matched_* + unmatched_*
-3. Part 2 internal matching price mechanism changed: Double price difference → Single middle price
+3. Part 2 internal matching price mechanism changed: Dual spread pricing → Single midpoint price
 4. Remaining allocation: Change from fixed alphabetical order to rotation priority
 5. More complete verification: Added buy/sell mutual exclusion verification
 
