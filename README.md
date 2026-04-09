@@ -51,3 +51,11 @@ Each household's final settlement for a given timeslot consists of three compone
 **Final net amount** (per household, per timeslot) **= matched_net_amount**(from Market Operator) **+ unmatched_net_amount**(from Balancing Operator Part 1) **+ deviation_net_amount**(from Balancing Operator Part 2)
 
 In the balancing section, buying (paying) is negative and selling (receiving) is positive
+
+**Key Changes**
+1. Convert a single file to multiple modules
+2. Field refactor：committed_* → matched_* + unmatched_*
+3. Part 2 internal matching price mechanism changed: Double price difference → Single middle price
+4. Remaining allocation: Change from fixed alphabetical order to rotation priority
+5. More complete verification: Added buy/sell mutual exclusion verification
+
